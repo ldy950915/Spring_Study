@@ -58,7 +58,9 @@
 
 [7장 - 다양한 의존 객체 주입]
 -------------	
-1) 생성자를 이용한 의존 객체 주입
+	
+1. 생성자를 이용한 의존 객체 주입
+	
 	public StudentRegisterService(StudentDao studentDao){
 		this.studentDao = studentDao;
 	}

@@ -51,12 +51,88 @@
 
 [6장 - DI(Dependency Injection]
 
-1. DI는 무엇인가?
+	1. DI는 무엇인가?
+	-  객체를 직접 생성하는 것이 아니라 외ㅏ부에서 생성한 후 주입을 시켜주는 방식 
+	
 
 [7장 - 다양한 의존 객체 주입]
 	
-	1) 생성자를 이용한 의존 객체 주입
+1.생성자를 이용한 의존 객체 주입
 	
+	public StudentRegisterService(StudentDao studentDao){
+		this.studentDao = studentDao;
+	}
+	
+	public StudentModifyService(StudentDao studentDao){
+		this.studentDao = studentDao;
+	}
+	
+	.xml
+	<bean id="registerService" class="ems.member.service.StudentRegisterService">
+		<constructor-arg ref="studentDao"></constructor-arg>
+	</bean>
+	
+	<bean id="modifyService" class="ems.member.service.StudentModifyService">
+		<constructor-arg ref="studentDao"></constructor-arg>
+	</bean>
+	
+	
+2. setter을 이용한 의존 객체 주입
+	
+	public void setJdbcUrl (String jdbcUrl){
+		this.jdbcUrl = jdbcUrl;
+	}
+	public void setUserId(String userId){
+		this.userId = userId;
+	}
+	public void setUserPw(String userPwd){
+		this.userPwd = userPwd;
+	}
+	
+	.xml
+	<bean id = dataBaseConnectionInfoDev" class= "ems.member.DataBaseConnectionInfo">
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+		<property name="userId" value="scott"/>
+		<property name="userPwd" value="tiger"/>
+	</bean>
+	
+3. List타입의 의존 객체 주입 
+	
+	public void setDevelopers(List<String> developers){
+		this.developers = developers;
+	}
+	
+	.xml
+	<property name="developers">
+		<list>
+			<value>Cheney.</value>
+			<value>Eloy.</value>
+			<value>Jasper.</value>
+			<value>Dillon.</value>
+			<value>Kian.</value>
+		</list>
+	</property>
+	
+4. Map타입 객체 주입
+	
+	public void setAdministrators(Map<String,String> administrators){
+		this.administrators = administrators;
+	}
+	
+	.xml 
+	<property>
+		<map>
+			<entry></entry>
+			<key>
+				<value>Cheney</value>
+			</key>
+				<value>cheney@springPjt.org</value>
+			<key>
+				<value>Jasper</value>
+			</key>
+				<value>jasper@springPjt.org</value>
+		</map>
+	</property>
 	
 
 

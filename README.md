@@ -35,9 +35,29 @@
 	
 	4) 폴더 및 pom.xml 파일의 이해
 	pom.xml 파일은 메이븐 설정파일로 메이븐은 라이브러리를 연결해주고, 빌드를 위한 플랫폼이다. 
-
+	
+	5) 에러 
+	-- 메이븐 업데이트 시키면 오류 사라짐
+	
 [4장 - 처음해보는 스프링 프로젝트]
 
+	1) Spring Container 
+	<bean id="아이디 속성" class = "패키지명(풀네임). java 파일 명"/>
+	 --> new라는 키워드를 사용하지 않아도 객체가 생성됨(메모리에 로드)
+
+	2) 컨테이너 접근 방법 
+	GenericApplicationContext ctx = new GenericApplicationContext("classpath:applicationContext.xml");
+	ctx.getBean("tWalk", TransportationWalk.class ); : 컨테이너 안에 있는 bean을 가져옴	 
+
+[6장 - DI(Dependency Injection]
+
+1. DI는 무엇인가?
+
+[7장 - 다양한 의존 객체 주입]
+	
+	1) 생성자를 이용한 의존 객체 주입
+	
+	
 
 
 

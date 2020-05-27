@@ -76,7 +76,6 @@
 		<constructor-arg ref="studentDao"></constructor-arg>
 	</bean>
 	
-	
 2. setter을 이용한 의존 객체 주입
 	
 	public void setJdbcUrl (String jdbcUrl){

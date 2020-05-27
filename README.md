@@ -3,6 +3,7 @@
 자바 스프링 프레임워크- 신입 프로그래머를 위한 강좌 
 
 [제1강]
+	
 	스프링 프레임워크는 주요기능으로 DI, AOP, MVC, JDBC 등을 제공
 
 	spring-core  : 스프링의 핵심인 DI와 IoC를 제공
@@ -12,10 +13,12 @@
 	spring-webmvc: 스프링에서 제공하는 컨츠롤러와 뷰를 이용한 스프링MVC구현 기능 제공
 
 [제2강 - 개발 환경 구축]
+	
 	JDK설치 후 Eclipse 설치 
 	--skip
 
 [3강 - 스프링 프로젝트 생성]
+	
 	1) 생성
 	오른쪽 마우스 클릭 -> New -> Other-> maven 검색 -> Maven project 생성
 	Group id 	: 전체 큰 프로젝트를 감싸고 있는 이름

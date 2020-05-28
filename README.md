@@ -59,7 +59,7 @@
 [7장 - 다양한 의존 객체 주입]
 -------------	
 	
-1. 생성자를 이용한 의존 객체 주입
+###1) 생성자를 이용한 의존 객체 주입
 	
 	public StudentRegisterService(StudentDao studentDao){
 		this.studentDao = studentDao;
@@ -78,7 +78,7 @@
 		<constructor-arg ref="studentDao"></constructor-arg>
 	</bean>
 	
-2) setter을 이용한 의존 객체 주입
+###2) setter을 이용한 의존 객체 주입
 	
 	public void setJdbcUrl (String jdbcUrl){
 		this.jdbcUrl = jdbcUrl;
@@ -97,7 +97,7 @@
 		<property name="userPwd" value="tiger"/>
 	</bean>
 	
-3) List타입의 의존 객체 주입 
+###3) List타입의 의존 객체 주입 
 	
 	public void setDevelopers(List<String> developers){
 		this.developers = developers;
@@ -114,7 +114,7 @@
 		</list>
 	</property>
 	
-4) Map타입 객체 주입
+###4) Map타입 객체 주입
 	
 	public void setAdministrators(Map<String,String> administrators){
 		this.administrators = administrators;

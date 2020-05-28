@@ -35,8 +35,6 @@ Git 명령어
 	- 커밋 로그를 작성하지 않고 -m 명령에 붙은 메시지를 커밋 로그로 반영한다. 
 	
 	
-	
-	
 자바 스프링 프레임워크- 신입 프로그래머를 위한 강좌 
 -------------
 [제1강]
@@ -173,8 +171,45 @@ public void setAdministrators(Map<String,String> administrators){
 </property>
 ```
 
+[8장 - 스프링 설정 파일 분리]
+-------------	
+										
+1) 스프링 설정 파일 분리		
+										↗		appCtx1.xml
+applicationContext.xml 	→		appCtx2.xml
+										↘		appCtx3.xml
+-> 나눠진  xml을 합치면 원래 있던 것과 동일한 기능을 가지고 있음.(스프링 컨테이너)
+```
+String appCtxs = {"classpath:appCtx1.xml","classpath:appCtx2.xml","classpath:appCtx3.xml"};
+--> 배열을 만들어서 분리된 xml 경로 지정
+GerericXmlApplicationContext = new GerericXmlApplicationContext(appCtxs); 
+	
+```
+2) 빈(Bean)의 범위
+	
+	2-1) 싱글톤(Singleton)
+	- 싱글톤 컨테이너에서 생성된 빈객테의 경우 동일한 타입에 대해서는 기본적으로 한 개만 생성이 되며, getBean() 메소드로 호출될 때 동일한 객체가 반환된다. 
+	
+	2-2) 프로토타입(Prototype)
+	- 싱글톤 범위와 반대의 개념도 있는데 이를 프로토타입 범위라고 한다. 
+	  프로토타입의 경우 개발자는 별도로 설정을 해줘야 하는데, 스프링 설정 파일에서 빈 객체를 정의할 때 scope 속성을 명시해 주면 된다. 
+	 
+	 ```
+	 <bean id="dependencyBean" class="scope.ex.DependencyBean" scope="prototype">
+	 	<constructor-arg ref="injectionBean"/>
+	 	<property name = "injectionBean" ref="injectionBean"/>
+	 </bean>
+	 ```
+[9장 - 의존객체 자동 주입]
 
-
+	9-1) 의존객체 자동 주입이란?
+	- 스프링 설정 파일에서 의존 객체를 주입할 때 <constructor-arg> 또는 <property > 태그로 의존 대상 객체를 명시하지 않아도 스프링 컨데이너가 자동으로 필요한 의존 대상 객체를 찾아서 의존 대상 객체가 필요한 객체에 주입해 주는 기능이다. 
+	>> 구현 방법은 @Autowired 와 @Resource 어노테이션을 이용해서 쉽게 구현할 수 있다. 
+	
+	9-2) @Autowired
+	
+	9-3) @Resource
+		
 
 
 

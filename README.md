@@ -51,8 +51,8 @@
 
 [6장 - DI(Dependency Injection]
 -------------
-1) DI는 무엇인가?
-	
+
+	1) DI는 무엇인가?
 	-  객체를 직접 생성하는 것이 아니라 외ㅏ부에서 생성한 후 주입을 시켜주는 방식 
 	
 
@@ -60,7 +60,7 @@
 -------------	
 	
 1) 생성자를 이용한 의존 객체 주입
-	
+	```
 	public StudentRegisterService(StudentDao studentDao){
 		this.studentDao = studentDao;
 	}
@@ -77,9 +77,9 @@
 	<bean id="modifyService" class="ems.member.service.StudentModifyService">
 		<constructor-arg ref="studentDao"></constructor-arg>
 	</bean>
-	
+	```
 2) setter을 이용한 의존 객체 주입
-	
+	```
 	public void setJdbcUrl (String jdbcUrl){
 		this.jdbcUrl = jdbcUrl;
 	}
@@ -96,9 +96,9 @@
 		<property name="userId" value="scott"/>
 		<property name="userPwd" value="tiger"/>
 	</bean>
-	
+	```
 3) List타입의 의존 객체 주입 
-	
+	```
 	public void setDevelopers(List<String> developers){
 		this.developers = developers;
 	}
@@ -113,9 +113,9 @@
 			<value>Kian.</value>
 		</list>
 	</property>
-	
+	```
 4) Map타입 객체 주입
-	
+	```
 	public void setAdministrators(Map<String,String> administrators){
 		this.administrators = administrators;
 	}
@@ -134,7 +134,7 @@
 				<value>jasper@springPjt.org</value>
 		</map>
 	</property>
-	
+	```
 
 
 

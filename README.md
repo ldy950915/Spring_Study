@@ -1,5 +1,42 @@
 # Spring_Study
 
+#GIT
+
+이클립스에서 터미널 사용법
+	
+	 Step1)
+	메뉴 : [Window] >> [Show View] >> [Other...] >> [Terminal] >> [Terminal] 선택 >> [Open]  
+	
+	Step2)
+	[Terminal] 아이콘 클릭 >> Terminal 창의  [Open a Terminal] 아이콘 클릭 >>  Choose terminal 에서 Git Bash 선택 후 사용
+	
+Git 명령어
+------------
+
+	$git init
+	- 현재 디렉토리를 git 저장소로 등록된다.
+	
+	$git add -all 
+	- 현재 디렉토리 및 그 하위에 있는 모든 파일들을 git의 변경 대상으로 등록한다. 하기전에 아래  .gitignore 파일에 쓸데없는 파일들을 먼저 정리하는것을 추천함.
+	
+	.gitignore
+	- 이 파일에 만약 git을 통해  관리하기 싫은 파일이 있다면 기록해둔다. 
+	
+	$git commit 
+	- git add 명령을 통해 등록된 파일들을 커밋한다. git add / rm 되지 않은 파일들은 커밋 대상에 포함되지 않는다. 
+	
+	$git commit -a
+	- git add 명령을 통해 이전에 등록해둔 파일들의 변경(modified, deleted)된 내역들을 자동으로 커밋한다.
+	
+	$git commit file1 file2 file3 
+	- 지정된 특정 파일들만 커밋한다.
+	
+	$git commit -m'commit message'
+	- 커밋 로그를 작성하지 않고 -m 명령에 붙은 메시지를 커밋 로그로 반영한다. 
+	
+	
+	
+	
 자바 스프링 프레임워크- 신입 프로그래머를 위한 강좌 
 -------------
 [제1강]

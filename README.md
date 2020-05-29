@@ -1,7 +1,7 @@
 # Spring_Study
 
-##GIT
-
+GIT
+------------
 이클립스에서 터미널 사용법
 	
 	 Step1)

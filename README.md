@@ -1,6 +1,6 @@
 # Spring_Study
 
-#GIT
+##GIT
 
 이클립스에서 터미널 사용법
 	
@@ -221,7 +221,8 @@ GerericXmlApplicationContext = new GerericXmlApplicationContext(appCtxs);
 	- 특정 Framework에 종속되지 않은 어플리케이션을 구성하기 위해서는 @Inject를 사용할 것을 권장.
 	- JSR-330 라이브러리인 javax.inject-x.x.x.jar 파일이 추가되어야한다. 
 	- 멤버변수 , setter, 메소드, 생성자 , 일반 메소드에 적용 가능
-		
+	
+	
 	
 
 

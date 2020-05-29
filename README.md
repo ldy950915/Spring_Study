@@ -210,7 +210,7 @@ GerericXmlApplicationContext = new GerericXmlApplicationContext(appCtxs);
 	- 주입하려고 하는 객체의 타입이 일치하는 객체를 자동으로 주입한다. 
 	
 	9-3) @Resource
-	- 자바에서 지원하는 어노테이션으로, 객체의 이름을 보고 어떤 ㄱ클래스를 의존 주입을 할 것인지 탐색합니다.
+	- 자바에서 지원하는 어노테이션으로, 객체의 이름을 보고 어떤 클래스를 의존 주입을 할 것인지 탐색합니다.
 	
 		
 	

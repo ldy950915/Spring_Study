@@ -201,6 +201,7 @@ GerericXmlApplicationContext = new GerericXmlApplicationContext(appCtxs);
 	 </bean>
 	 ```
 [9장 - 의존객체 자동 주입]
+-------------	
 
 	9-1) 의존객체 자동 주입이란?
 	- 스프링 설정 파일에서 의존 객체를 주입할 때 <constructor-arg> 또는 <property > 태그로 의존 대상 객체를 명시하지 않아도 
@@ -222,7 +223,18 @@ GerericXmlApplicationContext = new GerericXmlApplicationContext(appCtxs);
 	- JSR-330 라이브러리인 javax.inject-x.x.x.jar 파일이 추가되어야한다. 
 	- 멤버변수 , setter, 메소드, 생성자 , 일반 메소드에 적용 가능
 	
+[10강 - 의존객체 선택]
+-------------	
 	
+	10-1) 의존객체 선택
+	- 동일한 객체가 2개 이상인 경우 스프링 컨테이너는 자동 주입 대상 객체를 판단하지 못해서 Exception을 발생시킨다. 
+	
+	해결방법)	
+					- xml bean 안에 <qualifier value="usedDao"> 작성 -> 우선순위를 줌
+					- service 에서 @Qualifier("usedDao") -> 이름은 xml의 value와 이름이 동일하게!!
+	
+	
+		
 	
 
 

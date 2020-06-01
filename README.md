@@ -174,11 +174,13 @@ public void setAdministrators(Map<String,String> administrators){
 [8장 - 스프링 설정 파일 분리]
 -------------	
 										
-1) 스프링 설정 파일 분리		
+1) 스프링 설정 파일 분리	
+	
 										↗		appCtx1.xml
 applicationContext.xml 	→		appCtx2.xml
 										↘		appCtx3.xml
 -> 나눠진  xml을 합치면 원래 있던 것과 동일한 기능을 가지고 있음.(스프링 컨테이너)
+
 ```
 String appCtxs = {"classpath:appCtx1.xml","classpath:appCtx2.xml","classpath:appCtx3.xml"};
 --> 배열을 만들어서 분리된 xml 경로 지정
@@ -203,7 +205,7 @@ GerericXmlApplicationContext = new GerericXmlApplicationContext(appCtxs);
 [9장 - 의존객체 자동 주입]
 -------------	
 
-	9-1) 의존객체 자동 주입이란?
+9-1) 의존객체 자동 주입이란?
 	
 	```
 	- 스프링 설정 파일에서 의존 객체를 주입할 때 <constructor-arg> 또는 <property > 태그로 의존 대상 객체를 명시하지 않아도 
@@ -211,7 +213,7 @@ GerericXmlApplicationContext = new GerericXmlApplicationContext(appCtxs);
 	>> 구현 방법은 @Autowired 와 @Resource 어노테이션을 이용해서 쉽게 구현할 수 있다. 
 	```
 	
-	9-2) @Autowired
+9-2) @Autowired
 	
 	```
 	- Spring Framework 에 종속적.
@@ -222,7 +224,7 @@ GerericXmlApplicationContext = new GerericXmlApplicationContext(appCtxs);
 	- 멤버변수 , setter, 생성자 , 일반 메소드에 적용 가능
 	```	
 	
-	9-3) @Resource
+9-3) @Resource
 	
 	```
 	- Spring3.0 이상에서 적용
@@ -235,7 +237,7 @@ GerericXmlApplicationContext = new GerericXmlApplicationContext(appCtxs);
 [10강 - 의존객체 선택]
 -------------	
 	
-	10-1) 의존객체 선택
+10-1) 의존객체 선택
 	
 	```
 	- 동일한 객체가 2개 이상인 경우 스프링 컨테이너는 자동 주입 대상 객체를 판단하지 못해서 Exception을 발생시킨다. 

@@ -176,9 +176,10 @@ public void setAdministrators(Map<String,String> administrators){
 										
 1) 스프링 설정 파일 분리	
 	
-										↗		appCtx1.xml
-applicationContext.xml 	→		appCtx2.xml
-										↘		appCtx3.xml
+									↗	appCtx1.xml
+applicationContext.xml →	appCtx2.xml
+									↘	appCtx3.xml
+
 -> 나눠진  xml을 합치면 원래 있던 것과 동일한 기능을 가지고 있음.(스프링 컨테이너)
 
 ```
@@ -237,8 +238,8 @@ GerericXmlApplicationContext = new GerericXmlApplicationContext(appCtxs);
 	- 동일한 객체가 2개 이상인 경우 스프링 컨테이너는 자동 주입 대상 객체를 판단하지 못해서 Exception을 발생시킨다. 
 	
 	해결방법)	
-					- xml bean 안에 <qualifier value="usedDao"> 작성 -> 우선순위를 줌
-					- service 에서 @Qualifier("usedDao") -> 이름은 xml의 value와 이름이 동일하게!!
+		- xml bean 안에 <qualifier value="usedDao"> 작성 -> 우선순위를 줌
+		- service 에서 @Qualifier("usedDao") -> 이름은 xml의 value와 이름이 동일하게!!
 
 	
 	

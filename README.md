@@ -255,19 +255,21 @@ GerericXmlApplicationContext = new GerericXmlApplicationContext(appCtxs);
 ->	@Named(value="wordDao") : 내가 쓰고자하는 id의 속성 값을 넣으면 사용 가능(@Qualifier 와 동일) 	
 	
 [11강 - 생명주기(Life Cycle]	
-
+-------------	
 11-1 ) 스프링 컨테이너 생명주기
+
 ```
-생성 :	GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:appCtx.xml");		:	 GenericXmlApplicationContext를 이용한 스프링 컨테이너 초기화(생성)
+생성 :	GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:appCtx.xml");	 : GenericXmlApplicationContext를 이용한 스프링 컨테이너 초기화(생성)
 			
-			BookRegisterService bookRegisterService = ctx.getBean("bookRegisterService", "BookRegisterService.class");
-↓			BookSearchService bookSearchService = ctx.getBean("bookSearchService", "BookSearchService.class");	
-			MemberRegisterService memberRegisterService = ctx.getBean("memberRegisterService", "MemberRegisterService.class");
-			MemberSearchService memberSearchService = ctx.getBean("memberSearchService", "MemberSearchService.class");
+	BookRegisterService bookRegisterService = ctx.getBean("bookRegisterService", "BookRegisterService.class");
+↓	BookSearchService bookSearchService = ctx.getBean("bookSearchService", "BookSearchService.class");	
+	MemberRegisterService memberRegisterService = ctx.getBean("memberRegisterService", "MemberRegisterService.class");
+	MemberSearchService memberSearchService = ctx.getBean("memberSearchService", "MemberSearchService.class");
 			
-소멸			ctx.close();
+소멸	ctx.close();
 ```
 11-2) 빈(Bean)객체 생명주기
+
 11-3) init-method, destroy-method 속성	
 	
 		

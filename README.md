@@ -177,6 +177,7 @@ public void setAdministrators(Map<String,String> administrators){
 1) 스프링 설정 파일 분리	
 	
 applicationContext.xml →	appCtx1.xml , appCtx2.xml , appCtx3.xml
+
 -> 나눠진  xml을 합치면 원래 있던 것과 동일한 기능을 가지고 있음.(스프링 컨테이너)
 
 ```
@@ -237,8 +238,37 @@ GerericXmlApplicationContext = new GerericXmlApplicationContext(appCtxs);
 	해결방법)	
 		- xml bean 안에 <qualifier value="usedDao"> 작성 -> 우선순위를 줌
 		- service 에서 @Qualifier("usedDao") -> 이름은 xml의 value와 이름이 동일하게!!
-
 	
+10-2) 의존객체 자동 주입 체크
+- 거의 잘 안씀
+	
+	```
+	@Autowired(required = false)
+	의존객체가 있으면 주입을 하고 , 없으면 안함.
+	```  
+
+10-3) @Inject 
+- 	@Autowired와 거의 비슷하게 @Inject어노테이션을 이용해서 의존 객체를 자동으로 주입을 할 수 있다. 
+	@Autowired와 차이점이라면 @Autowired의 경우 required 속성을 이용해서 의존 대상 객체가 없어도 익셉션을 피할 수 있지만,
+	@Inject의 경우 required 속성을 지원하지 않는다. 			
+
+->	@Named(value="wordDao") : 내가 쓰고자하는 id의 속성 값을 넣으면 사용 가능(@Qualifier 와 동일) 	
+	
+[11강 - 생명주기(Life Cycle]	
+
+11-1 ) 스프링 컨테이너 생명주기
+```
+생성 :	GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:appCtx.xml");		:	 GenericXmlApplicationContext를 이용한 스프링 컨테이너 초기화(생성)
+			
+			BookRegisterService bookRegisterService = ctx.getBean("bookRegisterService", "BookRegisterService.class");
+↓			BookSearchService bookSearchService = ctx.getBean("bookSearchService", "BookSearchService.class");	
+			MemberRegisterService memberRegisterService = ctx.getBean("memberRegisterService", "MemberRegisterService.class");
+			MemberSearchService memberSearchService = ctx.getBean("memberSearchService", "MemberSearchService.class");
+			
+소멸			ctx.close();
+```
+11-2) 빈(Bean)객체 생명주기
+11-3) init-method, destroy-method 속성	
 	
 		
 	

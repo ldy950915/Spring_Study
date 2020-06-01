@@ -204,35 +204,39 @@ GerericXmlApplicationContext = new GerericXmlApplicationContext(appCtxs);
 -------------	
 
 	9-1) 의존객체 자동 주입이란?
+	```
 	- 스프링 설정 파일에서 의존 객체를 주입할 때 <constructor-arg> 또는 <property > 태그로 의존 대상 객체를 명시하지 않아도 
 	  스프링 컨데이너가 자동으로 필요한 의존 대상 객체를 찾아서 의존 대상 객체가 필요한 객체에 주입해 주는 기능이다. 
 	>> 구현 방법은 @Autowired 와 @Resource 어노테이션을 이용해서 쉽게 구현할 수 있다. 
-	
+	```
 	9-2) @Autowired
+	```
 	- Spring Framework 에 종속적.
 	- 주입하려고 하는 객체의 타입이 일치하는 객체를 자동으로 주입한다. 
 	- 빈의 id, name로 아무거나 맞으면 적용(Type Driven Injection)
 	- 여러개의 빈이 검색될 셩우 @Qualifier(name="xxx") 어노테이션으로 구분한다.
 	- 기본적으로 @Autowired된 속성은 모두 빈이 주입되어야 한다. (이 경우 required = false로 하면 없어도 오류는 발생안함)
 	- 멤버변수 , setter, 생성자 , 일반 메소드에 적용 가능
-		
+	```	
 	9-3) @Resource
+	```
 	- Spring3.0 이상에서 적용
 	- 자바에서 지원하는 어노테이션으로, 객체의 이름을 보고 어떤 클래스를 의존 주입을 할 것인지 탐색합니다.
 	- 특정 Framework에 종속되지 않은 어플리케이션을 구성하기 위해서는 @Inject를 사용할 것을 권장.
 	- JSR-330 라이브러리인 javax.inject-x.x.x.jar 파일이 추가되어야한다. 
 	- 멤버변수 , setter, 메소드, 생성자 , 일반 메소드에 적용 가능
-	
+	```
 [10강 - 의존객체 선택]
 -------------	
 	
 	10-1) 의존객체 선택
+	```
 	- 동일한 객체가 2개 이상인 경우 스프링 컨테이너는 자동 주입 대상 객체를 판단하지 못해서 Exception을 발생시킨다. 
 	
 	해결방법)	
 					- xml bean 안에 <qualifier value="usedDao"> 작성 -> 우선순위를 줌
 					- service 에서 @Qualifier("usedDao") -> 이름은 xml의 value와 이름이 동일하게!!
-	
+	```
 	
 		
 	

@@ -176,10 +176,7 @@ public void setAdministrators(Map<String,String> administrators){
 										
 1) 스프링 설정 파일 분리	
 	
-									↗	appCtx1.xml
-applicationContext.xml →	appCtx2.xml
-									↘	appCtx3.xml
-
+applicationContext.xml →	appCtx1.xml , appCtx2.xml , appCtx3.xml
 -> 나눠진  xml을 합치면 원래 있던 것과 동일한 기능을 가지고 있음.(스프링 컨테이너)
 
 ```
